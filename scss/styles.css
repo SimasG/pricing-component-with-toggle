@@ -9,15 +9,10 @@
 
 html {
   font-size: 62.5%;
-  font-family: "Space Mono", monospace;
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
   position: relative;
-}
-
-/* TYPOGRAPHY */
-:root {
-  --paragraph-mobile: 1.3rem;
 }
 
 body {
@@ -33,7 +28,7 @@ ul,
 li,
 input,
 ::-webkit-input-placeholder {
-  font-family: "Space Mono", monospace;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
@@ -46,7 +41,7 @@ ul,
 li,
 input,
 :-ms-input-placeholder {
-  font-family: "Space Mono", monospace;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
@@ -59,7 +54,7 @@ ul,
 li,
 input,
 ::-ms-input-placeholder {
-  font-family: "Space Mono", monospace;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
@@ -72,12 +67,12 @@ ul,
 li,
 input,
 ::placeholder {
-  font-family: "Space Mono", monospace;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 h3 {
@@ -108,5 +103,119 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.hide-for-mobile {
+  display: none;
+}
+
+.hero-illustration-container {
+  height: 0;
+}
+
+.hero-illustration-container .hero-illustration-top {
+  background-image: url("/images/bg-top.svg");
+  background-size: contain;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 75.7rem;
+  z-index: -10;
+  top: -8.5rem;
+  left: 50%;
+}
+
+.background-svg {
+  position: absolute;
+}
+
+header {
+  position: relative;
+  width: 64%;
+  margin: 6.4rem auto 8rem auto;
+}
+
+header h2 {
+  text-align: center;
+  font-size: 3.2rem;
+  color: #6d708d;
+  margin-bottom: 4.8rem;
+}
+
+header .header__payment-schedule {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.4rem;
+}
+
+header .header__payment-schedule .payment-schedule {
+  color: #494c5f;
+  opacity: 0.4;
+}
+
+header .header__payment-schedule .switch {
+  position: relative;
+  display: inline-block;
+  width: 5.6rem;
+  height: 3.2rem;
+}
+
+header .header__payment-schedule .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+header .header__payment-schedule .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196f3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header .header__payment-schedule .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 2.4rem;
+  width: 2.4rem;
+  right: 0.4rem;
+  bottom: 0.4rem;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header .header__payment-schedule .switch input:checked + .slider {
+  background-color: #ccc;
+}
+
+header .header__payment-schedule .switch input:focus + .slider {
+  -webkit-box-shadow: 0 0 0.1rem #ccc;
+          box-shadow: 0 0 0.1rem #ccc;
+}
+
+header .header__payment-schedule .switch input:checked + .slider:before {
+  -webkit-transform: translateX(-24px);
+  transform: translateX(-24px);
+}
+
+header .header__payment-schedule .switch .slider.round {
+  border-radius: 3.4rem;
+}
+
+header .header__payment-schedule .switch .slider.round:before {
+  border-radius: 50%;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,97 @@
+.hero-illustration-container {
+  // "height: 0 is what gets the .hero-illustration-top to move under the content"
+  height: 0;
+  //   position: relative;
+  .hero-illustration-top {
+    background-image: url("/images/bg-top.svg");
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75.7rem;
+    z-index: -10;
+    // not sure why percentages don't work on "top"
+    top: -8.5rem;
+    left: 50%;
+  }
+}
+
+.background-svg {
+  position: absolute;
+}
+
+header {
+  position: relative;
+  width: 64%;
+  margin: 6.4rem auto 8rem auto;
+  h2 {
+    text-align: center;
+    font-size: 3.2rem;
+    color: $grayish-blue;
+    margin-bottom: 4.8rem;
+  }
+  .header__payment-schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+    .payment-schedule {
+      color: $dark-grayish-blue;
+      opacity: 0.4;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 5.6rem;
+      height: 3.2rem;
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // background-color: #ccc;
+        background-color: #2196f3;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 2.4rem;
+        width: 2.4rem;
+        // left: 0.4rem;
+        right: 0.4rem;
+        bottom: 0.4rem;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+      input:checked + .slider {
+        // background-color: #2196f3;
+        background-color: #ccc;
+      }
+      input:focus + .slider {
+        box-shadow: 0 0 0.1rem #ccc;
+      }
+      input:checked + .slider:before {
+        -webkit-transform: translateX(-24px);
+        -ms-transform: translateX(-24px);
+        transform: translateX(-24px);
+      }
+      .slider.round {
+        border-radius: 3.4rem;
+      }
+      // :before -> the white circle that's moving on click
+      .slider.round:before {
+        border-radius: 50%;
+      }
+    }
+  }
+}
